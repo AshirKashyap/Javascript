@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Javascript Demo</title>
+    <meta charset="utf-8"></meta>
+    <script defer src="myScript.js"></script>
+    <style>
+    #myDiv, button {
+      font-size: 150%;
+    }
+    input {
+      font-size: 125%;
+    }
+    </style>
+  </head>
+
+  <body id="myBody" style="background-color:#99EDC3;">
+    <div id="clickDiv">
+      I will be replaced when you click.
+      <a href="javascript:ReplaceContentInContainer('clickDiv','Wow, you clicked it!')">
+        Click me to replace the content in the container.
+      </a>
+    </div> <br />
+
+    <div id="typeDiv" >
+      Type something to display on the screen!
+      <script type="text/javascript">
+        function EffectReplacement(it) {
+          re = /script/ig;
+          var content = it.value.replace(re,'s.c.r.i.p.t');
+          ReplaceContentInContainer('typeDiv',content);
+          }
+      </script>
+      <form style="margin:0">
+        <textarea cols="30" rows="5" name="new" style="width:500px;"
+        onchange="EffectReplacement(this)" wrap="on"> </textarea> <br />
+        <input type="button" value="Change Content" style="width:500px;">
+      </form>
+    </div>
+
+    <div id="myDiv">
+      <p style="color:#0528fa">
+        <label for='backgroundColor'>Background Color:</label>
+        <input id='backgroundColor' onkeyup = "onKeyUp('backgroundColor')" onmouseover = "onMouseOver('backgroundColor')" onmouseout = "onMouseOut('backgroundColor')" name='backgroundColor' type='color'>
+        <br /> <br />
+        <label for='textColor'>Text Color:</label>
+        <input id='textColor' onkeyup = "onKeyUp('textColor')" onmouseover = "onMouseOver('textColor')" onmouseout = "onMouseOut('textColor')" name='textColor' type='color'>
+        <br /> <br /> <hr />
+      </p>
+      <p style="color:#cc8800">
+        <label for='fname'>First Name:</label>
+        <input id='fname' onmouseover = "onMouseOver('fname')" onmouseout = "onMouseOut('fname')" name='fname' type='text'>
+        <br /> <br />
+        <label for='lname'>Last Name:</label>
+        <input id='lname' onmouseover = "onMouseOver('lname')" onmouseout = "onMouseOut('lname')" name='lname' type='text'>
+        <br /> <br />
+        <input type="checkbox" id="likeDog" name="likeDog">
+        <label for="dog">I like dogs</label><br>
+        <br /> <br />
+        <input type="checkbox" id="dogLover" name="dogLover">
+        <label for="dogLover">Dog Lover</label><br>
+        <br /> <br /> <hr />
+      </p>
+      <p style="color:purple">
+        <input type="radio" id="haveDogYes" name="haveDog">
+        <label for="haveDog">I have a dog</label><br>
+        <br /> <br />
+        <input type="radio" id="haveDogNo" name="haveDog">
+        <label for="haveDog">I don't have a dog</label><br>
+        <br /> <br /> <hr />
+      </p>
+      <p style="color:red">
+        <input type="date" id="date" onmouseover = "onMouseOver('date')" onmouseout = "onMouseOut('date')" name="date">
+        <label for="date"> Please enter the date</label><br>
+        <br /> <br />
+        <input type="password" id="password" onmouseover = "onMouseOver('password')" onmouseout = "onMouseOut('password')" name="password">
+        <label for="password"> Please enter a password</label><br>
+        <br />
+      </p>
+      <button onclick='myClick()'>Submit</button>
+    </div>
+  </body>
+</html>
